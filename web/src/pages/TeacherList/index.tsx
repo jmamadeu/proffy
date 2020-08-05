@@ -1,5 +1,7 @@
 import React from 'react';
+
 import PageHeader from '../../components/PageHeader';
+import TeacherItem from '../../components/TeacherItem';
 
 import './styles.css';
 
@@ -24,19 +26,14 @@ const TeacherList: React.FC = () => {
           </div>
         </form>
       </PageHeader>
-
       <main>
-        <article className='teacher-item'>
-          <header>
-            <img
-              src='https://avatars1.githubusercontent.com/u/59426856?s=460&u=51dbc62f347ce74c7e27272bf79129caa01614f8&v=4'
-              alt='João Amadeu'
-            />
-            <div>
-              <strong>Química</strong>
-            </div>
-          </header>
-        </article>
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
+        <TeacherItem />
       </main>
     </div>
   );
