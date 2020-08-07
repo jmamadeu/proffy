@@ -10,6 +10,10 @@ Application to join teachers and students for a strong connection and interactio
 
 ## :card_index: Layout
 
+<div>
+<img src="./.github/insomnia.png" width="700" height="500" />
+</div>
+
 ## :construction_worker: Installation
 
 You will need to install
@@ -50,6 +54,7 @@ $ yarn start # Running the project
 ```
 
 :tada: Congratulations, the project is running
+Att.: If you want to test routes, please copy the file `.github/Insomnia_2020-08-07.json` in the `Insomnia Application` [Insomnia](https://insomnia.rest/)
 
 ## :bulb: Contributing
 
