@@ -11,7 +11,7 @@ Application to join teachers and students for a strong connection and interactio
 ## :card_index: Layout
 
 <div>
-<img src="./.github/insomnia01.png" width="1024" height="800" />
+<img src="./.github/insomnia01.png" width="1044" height="600" />
 </div>
 
 ## :construction_worker: Installation
