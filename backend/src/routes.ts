@@ -1,50 +1,17 @@
 import express from 'express';
-import { getRepository, getConnection } from 'typeorm';
 
-import User from './database/entity/User';
-import Class from './database/entity/Class';
-import ClassSchedule from './database/entity/ClassSchedule';
-import convertHourToMinutes from './utils/convertHourToMinutes';
+import ClassController from './controllers/ClassController';
+import ConnectionController from './controllers/ConnectionController';
 
 const routes = express.Router();
 
-interface IScheduleItem {
-  weekDay: number;
-  to: string;
-  from: string;
-}
+const classController = new ClassController();
+const connectionController = new ConnectionController();
 
-routes.post('/classes', async (req, res) => {
-  const userRepository = getRepository(User);
-  const classRepository = getRepository(Class);
-  const classScheduleRepository = getRepository(ClassSchedule);
+routes.get('/classes', classController.index);
+routes.post('/classes', classController.create);
 
-  const { name, avatar, whatsapp, bio, subject, cost, schedule } = req.body;
-
-  const user = userRepository.create({ name, avatar, whatsapp, bio });
-
-  await userRepository.save(user);
-
-  const userClass = classRepository.create({ user, cost, subject });
-
-  await classRepository.save(userClass);
-
-  const classScheduleParsed = schedule.map((scheduleItem: IScheduleItem) => ({
-    weekDay: scheduleItem.weekDay,
-    from: convertHourToMinutes(scheduleItem.from),
-    to: convertHourToMinutes(scheduleItem.to),
-    class: userClass,
-  }));
-
-  const classSchedule = classScheduleRepository.create(classScheduleParsed);
-
-  await classScheduleRepository.save(classSchedule);
-
-  const userCreated = await userRepository.findOne(user.id, {
-    relations: ['classes', 'classes.classesSchedule'],
-  });
-
-  return res.json(userCreated);
-});
+routes.get('/connections', connectionController.index);
+routes.post('/connections', connectionController.create);
 
 export default routes;
