@@ -11,6 +11,7 @@ Application to join teachers and students for a strong connection and interactio
 ## :card_index: Layout
 
 <div>
+Endpoints for Restful API<br />
 <img src="./.github/insomnia01.png" width="1044" height="600" />
 </div>
 
