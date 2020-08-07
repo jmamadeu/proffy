@@ -11,7 +11,7 @@ Application to join teachers and students for a strong connection and interactio
 ## :card_index: Layout
 
 <div>
-<img src="./.github/insomnia.png" width="700" height="500" />
+<img src="./.github/insomnia.png" width="900" height="600" />
 </div>
 
 ## :construction_worker: Installation
@@ -53,8 +53,8 @@ $ yarn # Install all dependencies
 $ yarn start # Running the project
 ```
 
-:tada: Congratulations, the project is running
-Att.: If you want to test routes, please copy the file `.github/Insomnia_2020-08-07.json` in the `Insomnia Application` [Insomnia](https://insomnia.rest/)
+:tada: Congratulations, the project is running. <br />
+<strong> Att.: If you want to test routes, please copy the file `.github/Insomnia_2020-08-07.json` in the `Insomnia Application` [Insomnia](https://insomnia.rest/) </strong>
 
 ## :bulb: Contributing
 
