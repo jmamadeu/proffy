@@ -1,38 +1,54 @@
 import React from 'react';
 
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
 import './styles.css';
 
-const TeacherItem: React.FC = () => {
+interface ITeacherProps {
+  teacher: {
+    cost: number;
+    id: number;
+    subject: string;
+    user: {
+      id: number;
+      avatar: string;
+      bio: string;
+      name: string;
+      whatsapp: string;
+    };
+  };
+}
+
+const TeacherItem: React.FC<ITeacherProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post('/connections', { userId: teacher.user.id });
+  }
+
   return (
     <article className='teacher-item'>
       <header>
-        <img
-          src='https://avatars1.githubusercontent.com/u/59426856?s=460&u=51dbc62f347ce74c7e27272bf79129caa01614f8&v=4'
-          alt='João Amadeu'
-        />
+        <img src={teacher.user.avatar} alt={teacher.user.name} />
         <div>
-          <strong>João Amadeu</strong>
-          <span>Química</span>
+          <strong>{teacher.user.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
 
-      <p>
-        Entusiasta das melhores tecnologias de química avançada.
-        <br /> <br />
-        Apaixonado por explodir coisas em laboratórios e por mudar a vida das
-        pessoas através de experiências.
-      </p>
+      <p>{teacher.user.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>900 Kz</strong>
+          <strong>{teacher.cost}Kz</strong>
         </p>
-        <button type='button'>
+        <a
+          onClick={createNewConnection}
+          href={`https:wa.me/${teacher.user.whatsapp}`}
+          target='_blank'
+        >
           <img src={whatsappIcon} alt='Whatsapp' /> Entrar em contacto
-        </button>
+        </a>
       </footer>
     </article>
   );
