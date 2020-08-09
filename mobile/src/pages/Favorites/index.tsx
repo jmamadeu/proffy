@@ -39,8 +39,8 @@ const Favorites: React.FC = () => {
         }}
         showsVerticalScrollIndicator={false}
       >
-        {favorites.map((teacher: ITeacher) => (
-          <TeacherItem teacher={teacher} favorited={true} />
+        {favorites.map((teacher: ITeacher, index) => (
+          <TeacherItem key={index} teacher={teacher} favorited={true} />
         ))}
       </ScrollView>
     </SafeAreaView>
