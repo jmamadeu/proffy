@@ -11,18 +11,25 @@ Application to join teachers and students for a strong connection and interactio
 ## :card_index: Layout
 
 <div align="center">
-  Mobile Layout.
   <img src="./.github/mobile.gif" />
 </div>
 
 <div>
-<br />
-Endpoints for Restful API<br />
 <img src="./.github/insomnia01.png" width="1044" height="600" />
 </div>
 <br />
 
-![WEBVideo](/.github/web1.webm)
+<div align="center">
+<img src="./.github/web1.png" width="1044" height="600" />
+</div>
+
+<div align="center">
+<img src="./.github/web2.png" width="1044" height="600" />
+</div>
+
+<div align="center">
+<img src="./.github/web3.png" width="1044" height="600" />
+</div>
 
 ## :construction_worker: Installation
 
