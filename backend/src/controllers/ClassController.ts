@@ -34,9 +34,11 @@ export default class ClassController {
       .innerJoinAndSelect('class.user', 'user')
       .where('class.subject = :subject', { subject })
       .innerJoinAndSelect('class.classesSchedule', 'classesSchedule')
-      .where('classesSchedule.weekDay = :weekDay', { weekDay: Number(weekDay) })
-      .where('classesSchedule.from <= :time', { time: timeToMinutes })
-      .where('classesSchedule.to > :time', { time: timeToMinutes })
+      .andWhere('classesSchedule.weekDay = :weekDay', {
+        weekDay: Number(weekDay),
+      })
+      .andWhere('classesSchedule.from <= :time', { time: timeToMinutes })
+      .andWhere('classesSchedule.to > :time', { time: timeToMinutes })
       .getMany();
 
     return res.json(response);
